@@ -3,6 +3,7 @@
 /log/*
 /web/*_dev.php
 /web/uploads/*
+/web/sf/*
 /data/*.index/
 /lib/vendor/*
 !/lib/vendor/packages
