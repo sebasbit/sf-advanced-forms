@@ -18,5 +18,7 @@ class ProductPhotoCollectionForm extends sfForm
 
       $this->embedForm($i, $form);
     }
+
+    $this->mergePostValidator(new ProductPhotoValidatorSchema());
   }
 }

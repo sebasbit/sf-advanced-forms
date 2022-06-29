@@ -19,4 +19,22 @@ class ProductForm extends BaseProductForm
 
     $this->embedForm('newPhotos', $form);
   }
+
+  public function saveEmbeddedForms($con = null, $forms = null)
+  {
+    if (null === $forms)
+    {
+      $photos = $this->getValue('newPhotos');
+      $forms = $this->embeddedForms;
+      foreach ($this->embeddedForms['newPhotos'] as $name => $form)
+      {
+        if (!isset($photos[$name]))
+        {
+          unset($forms['newPhotos'][$name]);
+        }
+      }
+    }
+
+    return parent::saveEmbeddedForms($con, $forms);
+  }
 }
