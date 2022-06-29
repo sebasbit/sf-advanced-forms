@@ -1,0 +1,8 @@
+# Project files
+/cache/*
+/log/*
+/web/*_dev.php
+/web/uploads/*
+/data/*.index/
+/lib/vendor/*
+!/lib/vendor/packages
