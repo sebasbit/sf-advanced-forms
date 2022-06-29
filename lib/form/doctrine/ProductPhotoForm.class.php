@@ -14,7 +14,14 @@ class ProductPhotoForm extends BaseProductPhotoForm
   {
     $this->useFields(array('filename', 'caption'));
 
-    $this->setWidget('filename', new sfWidgetFormInputFile());
+    // $this->setWidget('filename', new sfWidgetFormInputFile());
+    $this->setWidget('filename', new sfWidgetFormInputFileEditable(array(
+      'file_src'    => '/uploads/products/'.$this->getObject()->filename,
+      'edit_mode'   => !$this->isNew(),
+      'is_image'    => true,
+      'with_delete' => false,
+    )));
+
     $this->setValidator('filename', new sfValidatorFile(array(
       'mime_types' => 'web_images',
       'path' => sfConfig::get('sf_upload_dir').'/products',

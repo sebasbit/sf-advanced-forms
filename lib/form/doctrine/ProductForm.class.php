@@ -18,6 +18,8 @@ class ProductForm extends BaseProductForm
     ));
 
     $this->embedForm('newPhotos', $form);
+
+    $this->embedRelation('Photos');
   }
 
   public function saveEmbeddedForms($con = null, $forms = null)
