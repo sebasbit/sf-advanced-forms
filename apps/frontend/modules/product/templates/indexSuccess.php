@@ -19,4 +19,4 @@
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('product/new') ?>">New</a>
+<a href="<?php echo url_for('product/new') ?>">New</a>

@@ -6,26 +6,37 @@
     <input type="hidden" name="sf_method" value="put" />
   <?php endif; ?>
 
-  <?php echo $form['name']->renderRow() ?>
+  <fieldset >
+    <legend>Product information</legend>
 
-  <?php echo $form['price']->renderRow() ?>
+    <?php echo $form['name']->renderRow() ?>
+    <?php echo $form['price']->renderRow() ?>
+  </fieldset>
 
-  <?php foreach ($form['newPhotos'] as $photo): ?>
+  <fieldset>
+    <legend>Upload More Photos</legend>
+
+    <?php foreach ($form['newPhotos'] as $photo): ?>
     <?php echo $photo['caption']->renderRow() ?>
     <?php echo $photo['filename']->renderRow() ?>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
+  </fieldset>
 
   <?php if (!$form->getObject()->isNew()): ?>
+  <fieldset>
+    <legend>Current Photos</legend>
+
     <?php foreach ($form['Photos'] as $photo): ?>
-      <?php echo $photo['caption']->renderRow() ?>
-      <?php echo $photo['filename']->renderRow(array('width' => 100)) ?>
+    <?php echo $photo['caption']->renderRow() ?>
+    <?php echo $photo['filename']->renderRow() ?>
     <?php endforeach; ?>
+  </fieldset>
   <?php endif; ?>
 
   <div>
     <?php echo $form->renderHiddenFields() ?>
   </div>
 
+  <input type="submit" class="form-submit" value="Save" />
   <a href="<?php echo url_for('product/index') ?>">Back to list</a>
-  <input type="submit" value="Save" />
 </form>
