@@ -13,5 +13,7 @@ class ProjectConfiguration extends sfProjectConfiguration
       'form.validation_error',
       array('BaseForm', 'listenToValidationError')
     );
+
+    sfWidgetFormSchema::setDefaultFormFormatterName('ac2009');
   }
 }
