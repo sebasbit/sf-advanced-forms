@@ -12,18 +12,11 @@ class ProductForm extends BaseProductForm
 {
   public function configure()
   {
-    $subForm = new sfForm();
+    $form = new ProductPhotoCollectionForm(null, array(
+      'product' => $this->getObject(),
+      'size'    => 2,
+    ));
 
-    for ($i = 0; $i < 2; $i++)
-    {
-      $productPhoto = new ProductPhoto();
-      $productPhoto->Product = $this->getObject();
-
-      $form = new ProductPhotoForm($productPhoto);
-
-      $subForm->embedForm($i, $form);
-    }
-
-    $this->embedForm('newPhotos', $subForm);
+    $this->embedForm('newPhotos', $form);
   }
 }
