@@ -8,6 +8,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+  color: darkblue;
+}
+
 .container {
   min-width: 100%;
   min-height: 100vh;
@@ -17,6 +21,12 @@ body {
   align-items: center;
   justify-content: center;
   background-color: aliceblue;
+}
+
+.form-section {
+  margin-bottom: 15px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
 .form-row {
@@ -35,25 +45,22 @@ body {
   border: 1px solid gray;
 }
 
-form fieldset {
-  margin-bottom: 15px;
+.form-row input[type=file] {
+  border-radius: 5px;
   border: 1px solid gray;
-  border-radius: 5px;
+  background-color: white;
 }
 
-.form-submit {
+.form-row input[type=file]::-webkit-file-upload-button {
+  display: none;
+}
+
+.form-row input[type=file]::before {
+  content: 'Click to add';
   margin-right: 5px;
-  padding: 10px;
+  padding: 5px;
   display: inline-block;
-  border: none;
-  border-radius: 5px;
-  background-color: darkblue;
-  color: white;
-}
-
-.form-submit:hover {
-  background-color: mediumblue;
-  transform: scale(1.1);
+  color: darkblue;
 }
 
 .form-row--error input[type=text] {
@@ -68,4 +75,35 @@ ul.form-error {
 
 li.form-error-item {
   color: red;
+}
+
+.form-submit {
+  margin-right: 5px;
+  padding: 10px;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  background-color: darkblue;
+  color: white;
+}
+
+.form-submit:hover {
+  background-color: mediumblue;
+  transform: scale(1.05);
+}
+
+.table {
+  margin-bottom: 15px;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  border: 1px solid gray;
+}
+
+.table tr:nth-child(even) {
+  background-color: #eee;
 }

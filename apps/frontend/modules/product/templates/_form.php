@@ -6,29 +6,35 @@
     <input type="hidden" name="sf_method" value="put" />
   <?php endif; ?>
 
-  <fieldset >
+  <fieldset class="form-section">
     <legend>Product information</legend>
 
     <?php echo $form['name']->renderRow() ?>
     <?php echo $form['price']->renderRow() ?>
   </fieldset>
 
-  <fieldset>
+  <fieldset class="form-section">
     <legend>Upload More Photos</legend>
 
     <?php foreach ($form['newPhotos'] as $photo): ?>
     <?php echo $photo['caption']->renderRow() ?>
-    <?php echo $photo['filename']->renderRow() ?>
+    <div class="form-row">
+      <?php echo $photo['filename']->render() ?>
+      <?php echo $photo['filename']->renderError() ?>
+    </div>
     <?php endforeach; ?>
   </fieldset>
 
   <?php if (!$form->getObject()->isNew()): ?>
-  <fieldset>
+  <fieldset class="form-section">
     <legend>Current Photos</legend>
 
     <?php foreach ($form['Photos'] as $photo): ?>
     <?php echo $photo['caption']->renderRow() ?>
-    <?php echo $photo['filename']->renderRow() ?>
+    <div class="form-row">
+      <?php echo $photo['filename']->render() ?>
+      <?php echo $photo['filename']->renderError() ?>
+    </div>
     <?php endforeach; ?>
   </fieldset>
   <?php endif; ?>

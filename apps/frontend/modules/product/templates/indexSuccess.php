@@ -1,6 +1,6 @@
 <h1>Products List</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Id</th>
